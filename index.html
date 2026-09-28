@@ -2,141 +2,256 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GM&GM</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gauci Maistre &amp; Gauci Maistre | Advocates, Valletta</title>
+  <meta name="description" content="With roots in the 1920s, Gauci Maistre &amp; Gauci Maistre is a Valletta law firm advising and representing businesses, individuals and families in Malta and internationally.">
+  <link rel="canonical" href="https://gm-advocates.com/">
+  <meta property="og:title" content="Gauci Maistre &amp; Gauci Maistre Advocates">
+  <meta property="og:description" content="A tradition of legal practice. A personal approach.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gm-advocates.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Letterhead proportions */
-      --container-max: 680px;
-      --logo-max: 520px;
+      --brown: #2e2421;
+      --brown-2: #3d312d;
+      --gold: #7a6400;      /* labels and links on cream */
+      --gold-b: #c3a300;    /* fine rules */
+      --gold-l: #d4bb4a;    /* on dark brown */
+      --ink: #2a2320;
+      --muted: #5f5550;
+      --rule: #e2dacb;
+      --paper: #fdfbf6;
+      --serif: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --wrap: 1080px;
     }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #ffffff;
-      color: #111;
-      font-family: "Times New Roman", Georgia, serif;
-    }
-
-    .container {
-      text-align: center;
-      width: min(var(--container-max), 92vw);
-      padding: 48px 40px;
-    }
-
-    .logo {
-      display: block;
-      margin: 0 auto 48px;
-      width: min(var(--logo-max), 90vw);
-      height: auto;
-    }
-
-    .section {
-      margin-bottom: 28px;
-    }
-
-    .label {
-      font-size: 12px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: #666;
-      margin-bottom: 8px;
-    }
-
-    .contact,
-    .address {
-      font-size: 18px;          /* letterhead body size */
-      letter-spacing: 0.4px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 16px;
       line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { width: min(var(--wrap), 100% - 32px); margin: 0 auto; }
+
+    /* Header */
+    .site-header { background: #fff; border-bottom: 1px solid var(--rule); }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; }
+    .site-header img { width: 290px; height: auto; display: block; }
+    .site-header nav a {
+      font-size: 11px; letter-spacing: .22em; text-transform: uppercase; text-decoration: none;
+      color: var(--muted); font-weight: 400; margin-left: 26px;
+    }
+    .site-header nav a:hover { color: var(--gold); }
+
+    /* Type */
+    .eyebrow { font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin: 0 0 14px; }
+    h1, h2, h3 { font-family: var(--serif); color: var(--brown); font-weight: 500; margin: 0; }
+    h1 { font-size: clamp(42px, 6.4vw, 70px); line-height: 1.05; }
+    h1 em { font-style: italic; color: var(--gold); font-weight: 400; }
+    h2 { font-size: clamp(30px, 4vw, 42px); line-height: 1.12; }
+    h3 { font-size: 24px; font-weight: 600; line-height: 1.2; }
+    .rule { width: 56px; height: 1px; background: var(--gold-b); margin: 24px 0 26px; }
+    .lede { font-size: clamp(17px, 1.8vw, 19px); line-height: 1.7; font-weight: 300; color: var(--brown-2); max-width: 660px; margin: 0; }
+
+    /* Hero */
+    .hero { padding: 104px 0 96px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+    .btn {
+      display: inline-block; padding: 14px 26px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase;
+      text-decoration: none; font-weight: 500; border: 1px solid var(--brown); transition: background .2s, color .2s;
+    }
+    .btn-primary { background: var(--brown); color: #f5efe3; }
+    .btn-primary:hover { background: var(--brown-2); }
+    .btn-ghost { color: var(--brown); }
+    .btn-ghost:hover { background: var(--brown); color: #f5efe3; }
+
+    /* Firm */
+    section.block { padding: 88px 0; border-top: 1px solid var(--rule); }
+    .intro { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+    .intro p { margin: 0 0 16px; max-width: 600px; }
+
+    /* Practice areas */
+    .areas-head { margin-bottom: 44px; }
+    .areas {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: var(--rule); border-top: 1px solid var(--brown); border-bottom: 1px solid var(--rule);
+    }
+    .area { background: var(--paper); padding: 30px 28px 34px; }
+    .area.wide { grid-column: span 2; }
+    .area.wide p { max-width: 560px; }
+    .area h3 { margin-bottom: 10px; }
+    .area p { margin: 0; font-size: 15px; color: var(--muted); }
+    .more { display: inline-block; margin-top: 16px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; font-weight: 500; color: var(--gold); text-decoration: none; }
+    .more:hover { color: var(--brown); }
+    .area.cta { background: var(--brown); display: flex; flex-direction: column; justify-content: center; }
+    .area.cta h3 { color: #f5efe3; }
+    .area.cta p { color: rgba(233,226,212,.84); }
+    .area.cta .more { color: var(--gold-l); }
+    .area.cta .more:hover { color: #f5efe3; }
+
+    /* Contact */
+    .contact { background: var(--brown); color: #e9e2d4; padding: 88px 0 40px; }
+    .contact h2 { color: #f5efe3; }
+    .contact .eyebrow { color: var(--gold-l); }
+    .contact .rule { background: var(--gold-l); }
+    .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; }
+    .contact p { color: rgba(233,226,212,.86); max-width: 520px; margin: 0; }
+    dl.details { margin: 0; }
+    dl.details dt { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-l); margin-bottom: 6px; }
+    dl.details dd { margin: 0 0 28px; font-family: var(--serif); font-size: 22px; line-height: 1.35; color: #f5efe3; }
+    dl.details dd a { text-decoration: none; border-bottom: 1px solid rgba(212,187,74,.4); }
+    dl.details dd a:hover { border-color: var(--gold-l); }
+    .contact .btn-primary { background: var(--gold-b); border-color: var(--gold-b); color: var(--brown); }
+    .contact .btn-primary:hover { background: var(--gold-l); }
+    footer.site {
+      margin-top: 64px; padding-top: 24px; border-top: 1px solid rgba(212,187,74,.3);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+      font-size: 12px; color: rgba(233,226,212,.6);
     }
 
-    .address {
-      font-size: 17px;
+    :focus-visible { outline: 2px solid var(--gold-b); outline-offset: 3px; }
+
+    @media (max-width: 860px) {
+      .intro, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .areas { grid-template-columns: 1fr 1fr; }
+      .area.cta { grid-column: span 2; }
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      position: fixed;
-      bottom: 24px;
-      width: 100%;
-      text-align: center;
-      font-size: 12px;
-      color: #777;
-      padding: 0 12px;
-      box-sizing: border-box;
-    }
-
-    /* Mobile optimisation */
-    @media (max-width: 480px) {
-      .container {
-        padding: 28px 20px;
-      }
-
-      .logo {
-        margin-bottom: 32px;
-        width: 88vw;
-      }
-
-      .label {
-        font-size: 11px;
-        letter-spacing: 2px;
-      }
-
-      .contact,
-      .address {
-        font-size: 14.5px;
-      }
-
-      .address {
-        font-size: 14px;
-      }
-
-      footer {
-        font-size: 11px;
-        bottom: 16px;
-      }
+    @media (max-width: 560px) {
+      .site-header nav { display: none; }
+      .site-header img { width: 220px; }
+      .hero { padding: 64px 0 60px; }
+      section.block, .contact { padding: 60px 0; }
+      .contact { padding-bottom: 32px; }
+      .areas { grid-template-columns: 1fr; }
+      .area, .area.wide, .area.cta { grid-column: auto; padding: 26px 4px 28px; }
+      .area.cta { padding: 28px 22px; }
+      h3 { font-size: 22px; }
+      .btn { width: 100%; text-align: center; }
+      dl.details dd { font-size: 20px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <img src="logo.png" alt="GM&GM" class="logo">
-
-    <div class="section">
-      <div class="label">Contact us</div>
-      <div class="contact">
-        <a href="mailto:info@gm-advocates.com">info@gm-advocates.com</a>
-      </div>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="/" aria-label="Gauci Maistre &amp; Gauci Maistre Advocates — home"><img src="/logo-header.png" width="548" height="190" alt="Gauci Maistre &amp; Gauci Maistre Advocates"></a>
+      <nav aria-label="Main">
+        <a href="#firm">The Firm</a>
+        <a href="#practice">Practice Areas</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="section">
-      <div class="label">Visit us</div>
-      <div class="address">
-        <a
-          href="https://maps.app.goo.gl/2T83gn9bhVm5C4ms7"
-          target="_blank"
-          rel="noopener noreferrer">
-          111/2, Triq Santa Lucia,<br>
-          Valletta, Malta
-        </a>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Advocates · Valletta, Malta</p>
+        <h1>A tradition of legal practice.<br><em>A personal approach.</em></h1>
+        <div class="rule"></div>
+        <p class="lede">With roots in the 1920s, Gauci Maistre &amp; Gauci Maistre is a Valletta law firm advising and representing businesses, individuals and families in Malta and internationally. We combine an established legal tradition with practical advice and personal attention to each client&rsquo;s affairs.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Get in touch</a>
+          <a class="btn btn-ghost" href="#practice">Our practice</a>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <footer>© Gauci Maistre &amp; Gauci Maistre</footer>
+    <section class="block" id="firm">
+      <div class="wrap intro">
+        <div>
+          <p class="eyebrow">The Firm</p>
+          <h2>Our heritage.<br>Your confidence.</h2>
+        </div>
+        <div>
+          <p>Our origins lie in a legal practice established in the 1920s. Today, we carry that tradition forward through clear advice, careful preparation and a close understanding of our clients&rsquo; needs.</p>
+          <p>We advise on transactions and represent clients in disputes, providing direct access to the lawyer responsible for their matter and a consistent point of contact throughout.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="practice">
+      <div class="wrap">
+        <div class="areas-head">
+          <p class="eyebrow">Practice Areas</p>
+          <h2>How we can help</h2>
+        </div>
+        <div class="areas">
+          <article class="area wide">
+            <h3>Litigation &amp; Dispute Resolution</h3>
+            <p>Representation of businesses and individuals before the Maltese courts, tribunals and in arbitration, together with advice on the resolution of disputes before they reach court.</p>
+          </article>
+          <article class="area">
+            <h3>Corporate &amp; Commercial</h3>
+            <p>Shareholder arrangements, commercial contracts and transactions for businesses operating in or through Malta.</p>
+          </article>
+          <article class="area">
+            <h3>Trademarks &amp; Intellectual Property</h3>
+            <p>Registration, protection and enforcement of trademarks and other intellectual property rights, and the licensing and transfer of those rights.</p>
+          </article>
+          <article class="area">
+            <h3>Property &amp; Real Estate</h3>
+            <p>Acquisitions, sales, promise of sale agreements, leases and due diligence on property in Malta and Gozo.</p>
+          </article>
+          <article class="area">
+            <h3>Residence &amp; Citizenship</h3>
+            <p>Residence routes in Malta for non-EU individuals and families, including the Malta Permanent Residence Programme.</p>
+            <a class="more" href="/mprp/">MPRP overview &rarr;</a>
+          </article>
+          <article class="area">
+            <h3>Employment &amp; Industrial Relations</h3>
+            <p>Employment contracts, workplace policies and disputes, advising employers and employees under Maltese employment law.</p>
+          </article>
+          <article class="area">
+            <h3>Yachting</h3>
+            <p>Registration of vessels under the Malta flag, acquisitions and sales, and related commercial matters for owners and operators.</p>
+          </article>
+          <article class="area cta">
+            <h3>Another matter?</h3>
+            <p>If your matter is not listed here, write to us and we will let you know whether we can assist.</p>
+            <a class="more" href="#contact">Contact the firm &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Speak with us</h2>
+          <div class="rule"></div>
+          <p>For new enquiries, please write to us with a short outline of your matter and we will be in touch to arrange a consultation.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:info@gm-advocates.com">Email the firm</a>
+          </div>
+        </div>
+        <dl class="details">
+          <dt>Email</dt>
+          <dd><a href="mailto:info@gm-advocates.com">info@gm-advocates.com</a></dd>
+          <dt>Office</dt>
+          <dd><a href="https://maps.app.goo.gl/2T83gn9bhVm5C4ms7" target="_blank" rel="noopener noreferrer">111/2, Triq Santa Lucia,<br>Valletta, Malta</a></dd>
+        </dl>
+      </div>
+      <footer class="site">
+        <span>© Gauci Maistre &amp; Gauci Maistre</span>
+        <span>Advocates · Valletta, Malta</span>
+      </footer>
+    </div>
+  </section>
 
 </body>
 </html>
